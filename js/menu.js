@@ -25,8 +25,10 @@ canvas.addEventListener('click', ()=>{
 
 //moved to function to use on image load
 function closeMenus(){
-    let to_inactive=visible_menu.shift();
-    to_inactive.querySelector('li').classList.remove('active');
+    if(visible_menu.length!==0){
+        let to_inactive=visible_menu.shift();
+        to_inactive.querySelector('li').classList.remove('active');
+    }
     sub_item_list.map(sub_item=>sub_item.style.visibility="hidden");
 }
 
